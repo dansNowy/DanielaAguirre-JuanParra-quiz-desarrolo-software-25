@@ -11,27 +11,27 @@ import java.util.*;
 @RequestMapping("/api/motocicletas")
 public class MotocicletaController {
 
-    private List<Motocicleta> motocicletas = new ArrayList<>();
+    private List<Motocicleta> motocicleta = new ArrayList<>();
 
     // Obtener todas las motocicletas
     @GetMapping
     public List<Motocicleta> getAllMotocicletas() {
-        return motocicletas;
+        return motocicleta;
     }
 
     // Crear una nueva motocicleta
     @PostMapping
     public Motocicleta createMotocicleta(@RequestBody Motocicleta nuevaMotocicleta) {
-        motocicletas.add(nuevaMotocicleta);
+        motocicleta.add(nuevaMotocicleta);
         return nuevaMotocicleta;
     }
 
     // Actualizar una motocicleta por su ID
     @PutMapping("/{id}")
-    public Motocicleta updateMotocicleta(@PathVariable String id, @RequestBody Motocicleta updatedMotocicleta) {
-        for (int i = 0; i < motocicletas.size(); i++) {
-            if (motocicletas.get(i).getId().equals(id)) {
-                motocicletas.set(i, updatedMotocicleta);
+    public Motocicleta updateMotocicleta(@PathVariable String ID, @RequestBody Motocicleta updatedMotocicleta) {
+        for (int i = 0; i < motocicleta.size(); i++) {
+            if (motocicleta.get(i).getId().equals(ID)) {
+                motocicleta.set(i, updatedMotocicleta);
                 return updatedMotocicleta;
             }
         }
@@ -40,15 +40,15 @@ public class MotocicletaController {
 
     // Eliminar una motocicleta por su ID
     @DeleteMapping("/{id}")
-    public String deleteMotocicleta(@PathVariable String id) {
-        motocicletas.removeIf(m -> m.getId().equals(id));
+    public String deleteMotocicleta(@PathVariable String ID) {
+        motocicleta.removeIf(m -> m.getId().equals(ID));
         return "Motocicleta eliminada";
     }
 
     // Buscar una motocicleta mediante la placa
     @GetMapping("/buscar/{placa}")
     public Motocicleta getMotocicletaByPlaca(@PathVariable String placa) {
-        return motocicletas.stream()
+        return motocicleta.stream()
                 .filter(m -> m.getPlacaMotocicleta().equalsIgnoreCase(placa))
                 .findFirst()
                 .orElseThrow(() -> new NoSuchElementException("Motocicleta no encontrada"));
@@ -58,7 +58,7 @@ public class MotocicletaController {
     @GetMapping("/cilindraje/{cilindraje}")
     public List<Motocicleta> getMotocicletasByCilindraje(@PathVariable int cilindraje) {
         List<Motocicleta> resultado = new ArrayList<>();
-        for (Motocicleta m : motocicletas) {
+        for (Motocicleta m : motocicleta) {
             if (m.getCilindrajeMotocicleta() == cilindraje) {
                 resultado.add(m);
             }
