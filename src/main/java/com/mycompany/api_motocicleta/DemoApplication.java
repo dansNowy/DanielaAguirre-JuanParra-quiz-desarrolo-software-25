@@ -14,10 +14,5 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
     
-    /*
-    La libreria no queria funcionar
-    y le vimos muchas maneras para 
-    poder que nos corriera y el POM
-    no quiere actualizar la libreria
-    */
+  
 }
