@@ -6,11 +6,13 @@ package com.mycompany.api_motocicleta;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author usuario
  */
+@Repository
 public class MotocicletaRepository {
     private final List<Motocicleta> baseDeDatos = new ArrayList<>();
 	 private final List<String> authTokens = new ArrayList<>();

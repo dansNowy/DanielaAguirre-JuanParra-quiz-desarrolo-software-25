@@ -5,14 +5,17 @@
 package com.mycompany.api_motocicleta;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author usuario
  */
+@Service
 public class MotocicletaService {
     private final MotocicletaRepository motocicletaRepository;
-	 
+	 @Autowired
 	 public MotocicletaService(MotocicletaRepository motocicletaRepository) {
 	 this.motocicletaRepository = motocicletaRepository;
 	 initSampleData();
