@@ -20,7 +20,7 @@ private String placaMotocicleta;
     private String colorMotocicleta;
 
     // Constructor
-    public Motocicleta(String marcaMotocicleta, String placaMotocicleta, int cilindrajeMotocicleta, double precioMotocicleta) {
+    public Motocicleta(String marcaMotocicleta, String placaMotocicleta, int cilindrajeMotocicleta, double precioMotocicleta,String colorMotocicleta) {
         this.ID = UUID.randomUUID().toString(); // Generar ID aleatorio
         this.MarcaMotocicleta = marcaMotocicleta;
         this.placaMotocicleta = placaMotocicleta;
