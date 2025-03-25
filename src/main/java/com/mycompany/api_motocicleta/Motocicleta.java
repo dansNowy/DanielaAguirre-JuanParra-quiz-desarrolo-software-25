@@ -33,6 +33,10 @@ private String placaMotocicleta;
     public String getId() {
         return ID;
     }
+    
+    public void setId (String ID){
+        this.ID= ID;
+    }
 
     public String getMarcaMotocicleta() {
         return MarcaMotocicleta;
@@ -86,5 +90,7 @@ private String placaMotocicleta;
                 ", color='" + colorMotocicleta + '\'' +
                 '}';
     }    
+
+    
     
 }

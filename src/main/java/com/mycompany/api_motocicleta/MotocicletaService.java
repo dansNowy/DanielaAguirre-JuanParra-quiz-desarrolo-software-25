@@ -20,6 +20,7 @@ public class MotocicletaService {
 	 this.motocicletaRepository = motocicletaRepository;
 	 initSampleData();
 	 }
+         
 	 private void initSampleData() {
 	 Motocicleta Yamaha = new Motocicleta("YZ","TBI67G",125,5000000,"Rojo");
 	 
